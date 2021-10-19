@@ -16,3 +16,6 @@ del arr[arr.index(item)]
 
 # map, filter ( function , arr )
 # map, filter ( lambda x: func(x) , arr )
+
+# list comp..rehension
+print([n for n in arr if n > 10] or [-1])

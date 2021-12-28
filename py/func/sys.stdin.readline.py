@@ -5,12 +5,12 @@ import sys
 a = int(sys.stdin.readline())
 
 # 정해진 개수의 정수를 한 줄에 입력받을 때
-a, b, c, ... = map(int, sys.stdin.readline().split())
+a, b, c = map(int, sys.stdin.readline().split())
 
 # 임의의 개수의 자료를 한 줄에 입력받아 리스트에 저장할 때
-a, b, c, ... = sys.stdin.readline().split()
+a, b, c = sys.stdin.readline().split()
 # 정수라면? -> map 으로 뜯어서 int 해주고 다시 list 로 변환한다.
-a, b, c, ... = list(map(int, sys.stdin.readline().split()))
+a, b, c = list(map(int, sys.stdin.readline().split()))
 
 # 임의의 개수의 정수를 n줄 입력받아 2차원 리스트에 저장할 때
 data = []

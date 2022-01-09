@@ -1,4 +1,4 @@
-arr, tmp =[]
+arr, tmp = []
 index, a, b, item = 0
 
 # 정렬

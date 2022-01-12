@@ -11,7 +11,7 @@ def input():
 def star(n, arr):
     matrix = []
 
-    if n == 3:
+    if n == 1:
         return arr
     else:
         for i in arr:
@@ -22,7 +22,7 @@ def star(n, arr):
             matrix.append(i * 3)
         return star(n//3, matrix)
 
-first = ["***", "* *", "***"]
+first = ["*"]
 n = int(input())        
 
 ans = star(n, first)

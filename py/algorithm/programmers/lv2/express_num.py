@@ -1,17 +1,16 @@
-'''
-다른 사람의 풀이에 뭔가 수학적인 이슈가 있는데...
-일단 pass
-'''
-
 def solution(n):
     answer = 0
-    # 1 ~ k 의 합 --> (k + 1) * k / 2 를 빼면 0 또는 k 로 나누어 떨어지는 수 이다.
-    for i in range(1, n + 1):
-        div = (i + 1) * i // 2
-        if n >= div:
-            if n - div == 0 or (n - div) % i == 0:
-                answer += 1
-            
-    return answer
+    # 연속한 자연수들로 표현
+    # n, n+1, ..., n+(i-1)
+    if n == 1: return 1
 
-print(solution(24))
+    # i 개의 연속된 자연수의 합으로 표현이 가능한가?
+    for i in range(1, n):
+        m = sum(range(i))   # 0 부터 i-1 까지의 합
+        
+        if m >= n:          # m == n 을 허용할 경우, 15의 경우 자연수 6개의 합으로 표현이 가능하는 뜻이 됨.
+            break
+        elif (n - m) % i == 0:
+            answer += 1
+        
+    return answer

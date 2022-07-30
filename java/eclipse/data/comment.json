@@ -1,0 +1,18 @@
+{
+  "1": [
+    {
+      "commentId": 0.0,
+      "articleId": 1.0,
+      "userSeq": 5.0,
+      "content": "잘 보았습니다.",
+      "regDate": "Jul 4, 2022 12:50:32 PM"
+    },
+    {
+      "commentId": 1.0,
+      "articleId": 1.0,
+      "userSeq": 4.0,
+      "content": "좋은 글 입니다~~",
+      "regDate": "Jul 4, 2022 12:50:32 PM"
+    }
+  ]
+}

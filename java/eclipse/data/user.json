@@ -1,0 +1,50 @@
+[
+  {
+    "userSeq": 0,
+    "userId": "ssafy",
+    "password": "1234",
+    "userName": "김싸피",
+    "nickName": "김싸피",
+    "email": "ssafy@ssafy.com"
+  },
+  {
+    "userSeq": 1,
+    "userId": "hong",
+    "password": "123",
+    "userName": "홍싸피",
+    "nickName": "ssafy.hong",
+    "email": "hong@ssafy.com"
+  },
+  {
+    "userSeq": 2,
+    "userId": "samsic",
+    "password": "samsic",
+    "userName": "김삼식",
+    "nickName": "삼식이",
+    "email": "samsic@ssafy.com"
+  },
+  {
+    "userSeq": 3,
+    "userId": "happy",
+    "password": "happy",
+    "userName": "이싸피",
+    "nickName": "해피바이러스",
+    "email": "happy@ssafy.com"
+  },
+  {
+    "userSeq": 4,
+    "userId": "thumb",
+    "password": "thumb",
+    "userName": "박싸피",
+    "nickName": "따봉맨",
+    "email": "thumb@ssafy.com"
+  },
+  {
+    "userSeq": 5,
+    "userId": "song",
+    "password": "song",
+    "userName": "송싸피",
+    "nickName": "프린스송",
+    "email": "song@ssafy.com"
+  }
+]

@@ -1,0 +1,39 @@
+[
+	{
+		"resId": 101, 
+		"name": "을밀대", 
+		"address": "서울", 
+		"signaturemenu": "물냉면",
+		"rate":9
+	},
+	{
+		"resId": 102, 
+		"name": "도꼭지", 
+		"address": "서울", 
+		"signaturemenu": "도미덮밥",
+		"rate":8
+		
+	},
+	{
+		"resId": 401, 
+		"name": "도마29", 
+		"address": "대구", 
+		"signaturemenu": "연어초밥",
+		"rate":8
+
+	},
+	{
+		"resId": 301, 
+		"name": "마포리 1987", 
+		"address": "서울", 
+		"signaturemenu": "마포리 스테이크",
+		"rate" : 7
+	},
+	{
+		"resId": 601, 
+		"name": "성심당", 
+		"address": "대전", 
+		"signaturemenu": "튀김소보로",
+		"rate": 8
+	}
+]

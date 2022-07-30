@@ -1,0 +1,58 @@
+[
+  {
+    "articleId": 0,
+    "title": "공지사항",
+    "content": "게시글 내용",
+    "userSeq": 0,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 1,
+    "title": "코딩테스트란",
+    "content": "게시글 내용",
+    "userSeq": 1,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 2,
+    "title": "취뽀는 나에게",
+    "content": "게시글 내용",
+    "userSeq": 2,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 3,
+    "title": "Java 완전정복",
+    "content": "게시글 내용",
+    "userSeq": 3,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 4,
+    "title": "Python 완전정복",
+    "content": "게시글 내용",
+    "userSeq": 3,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 5,
+    "title": "Image 잘찍는법 완전정복",
+    "content": "게시글 내용",
+    "userSeq": 3,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  },
+  {
+    "articleId": 6,
+    "title": "클린코드 작성법",
+    "content": "게시글 내용",
+    "userSeq": 3,
+    "viewCnt": 0,
+    "regDate": "Jul 4, 2022 12:56:28 PM"
+  }
+]

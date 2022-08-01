@@ -1,4 +1,4 @@
-package ssafy.algorithm;
+package ssafy.algorithm.etc;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

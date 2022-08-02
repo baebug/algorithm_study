@@ -1,3 +1,4 @@
+package ssafy.algorithm.etc;
 import java.util.Scanner;
 
 public class ThreeDice1 {

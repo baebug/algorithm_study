@@ -1,3 +1,4 @@
+package ssafy.algorithm.etc;
 // 시간 문제에서는 분을 먼저 계산하고 (60분 넘을 경우 h++) 시간을 계산하자.
 
 import java.util.Scanner;

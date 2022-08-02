@@ -8,14 +8,6 @@ public class Algorithm_01_1244 {
 
 	static int[] arr;
 	
-	static void change(int i) {
-		if (arr[i] == 1) {
-			arr[i] = 0;
-		} else {
-			arr[i] = 1;
-		}
-	}
-	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -43,13 +35,18 @@ public class Algorithm_01_1244 {
 				// 학생의 성별이 여자일 때 	
 				change(num);
 				
-				for (int j = 1; num - j > 0 && num + j <= N; j++) {
-					if (arr[num - j] == arr[num + j]) {
-						change(num - j);
-						change(num + j);
+				int left = num - 1;
+				int right = num + 1;
+				
+				while ( left > 0 && right <= N) {
+					if (arr[left] == arr[right]) {
+						change(left);
+						arr[right] = arr[left];
 					} else {
 						break;
 					}
+					left--;
+					right++;
 				}
 			}
 		}
@@ -61,5 +58,13 @@ public class Algorithm_01_1244 {
 			}
 		}
 	}
-
+	
+	static void change(int i) {
+		if (arr[i] == 1) {
+			arr[i] = 0;
+		} else {
+			arr[i] = 1;
+		}
+	}
+	
 }

@@ -4,30 +4,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BJ_스위치켜고끄기_1244 {
+public class BJ_스위치켜고끄기_1244_2 {
 	
-	static int[] arr;
-	
-	static void change(int i) {
-		if (arr[i] == 1) {
-			arr[i] = 0;
-		} else {
-			arr[i] = 1;
-		}
-	}
+	static int N, n;
+	static boolean[] arr;
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int N = Integer.parseInt(br.readLine());
-		arr = new int[N + 1];
+		N = Integer.parseInt(br.readLine());
+		arr = new boolean[N + 1];
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		for (int i = 1; i <= N; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
+			if (arr[i] = st.nextToken().equals("1")) arr[i] = true;	// false 는 default
 		}
 		
-		int n = Integer.parseInt(br.readLine());
+		n = Integer.parseInt(br.readLine());
 		
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
@@ -69,11 +62,17 @@ public class BJ_스위치켜고끄기_1244 {
 		}
 		
 		for (int i = 1; i <= N; i++) {
-			System.out.print(arr[i] + " ");
+			System.out.print(arr[i] ? 1 : 0);
 			if (i % 20 == 0) {
 				System.out.println();
+			} else {
+				System.out.print(" ");
 			}
 		}
+	}
+	
+	static void change(int i) {
+		arr[i] = !arr[i];
 	}
 
 }

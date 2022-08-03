@@ -2,7 +2,6 @@ package ssafy.algorithm.sw;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class SW_Flatten_1208_3 {

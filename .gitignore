@@ -5,3 +5,10 @@ py/exercise.ipynb
 **/.DS_Store
 /.metadata/
 /.recommenders/
+
+# java 
+.classpath
+.project
+.settings/
+
+bin/

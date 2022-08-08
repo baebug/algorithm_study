@@ -1,4 +1,4 @@
-package ssafy.live;
+package ssafy.live.io;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

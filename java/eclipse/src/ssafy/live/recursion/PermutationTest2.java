@@ -1,4 +1,4 @@
-package ssafy.live;
+package ssafy.live.recursion;
 
 import java.util.Arrays;
 import java.util.Scanner;

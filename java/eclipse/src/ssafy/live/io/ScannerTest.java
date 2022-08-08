@@ -1,4 +1,4 @@
-package ssafy.live;
+package ssafy.live.io;
 
 import java.util.Scanner;
 

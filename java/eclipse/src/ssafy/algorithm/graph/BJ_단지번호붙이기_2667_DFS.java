@@ -1,4 +1,4 @@
-package ssafy;
+package ssafy.algorithm.graph;
 
 import java.io.*;
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
 // (visited & cnt == 0) 조건으로 cnt 있으면 방문은 가능하지만 visited 가 true 이므로 단지수는 추가 안하면? 그래도 고립될 수 있음
 // 간선 데이터를 델타로 준다 --> (1, 2, 3, 4) 상 우 하 좌 순 ( 0은 dummy )
 // 이차원 데이터를 일차원으로 표현? --> 행에 N 만큼 가중치를 준다. (N-queen 에서 쓰던데.. 가로, 세로, 대각선)
-public class Main {
+public class BJ_단지번호붙이기_2667_DFS {
 	
 	static int N, total, tmpCnt;
 	static int[][] input;
@@ -16,7 +16,6 @@ public class Main {
 	static List<Integer>[] child;
 	static boolean[] visited;
 	static int[][] dt = {{0, 0}, {-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-	static Deque<Integer> dq;
 	static StringBuilder sb = new StringBuilder();
 	
 	public static void main(String[] args) throws Exception {
@@ -27,7 +26,6 @@ public class Main {
 		visited = new boolean[N*N+1];
 		total = 0;
 		result = new ArrayList<>();
-		dq = new ArrayDeque<>();
 		
 		// 간선을 저장할 리스트 할당
 		for (int i = 0; i < child.length; i++) {
@@ -56,9 +54,9 @@ public class Main {
 				int idx = i * N + j;
 				if (input[i][j] == 1 && !visited[idx]) {
 					total++;	// 단지 수 +1
-					tmpCnt = 1;
+					tmpCnt = 0;
 					visited[idx] = true;
-					bfs(idx);
+					dfs(idx, 1);
 					result.add(tmpCnt);
 				}
 			}
@@ -73,20 +71,26 @@ public class Main {
 		
 	}
 	
-	static void bfs(int idx) {
-		dq.addLast(idx);
-		
-		while (!dq.isEmpty()) {
-			int cur = dq.peekFirst();
-			
-			for(int i : child[cur]) {
-				if (visited[i]) continue;
-				tmpCnt++;
-				visited[i] = true;
-				dq.addLast(i);
-			}
-			dq.removeFirst();
+	// child[idx]의 간선 데이터를 탐색하는 데 다돌면 visited 찍고 탈출? 애초에 visited 가 의미가 있나
+	// 전체 집 수를 카운트하는 파라미터
+	static void dfs(int idx, int count) {
+		boolean flag = true;
+		for(int i : child[idx]) {	// i 에는 1, 2, 3, 4 가 들어있는데? --> index들을 넣어주자 --> 해결
+			if (!visited[i]) flag = false;
 		}
+		if (flag) {
+			visited[idx] = true;
+			count++;
+			tmpCnt = Math.max(count, tmpCnt);
+			return;
+		}
+		
+		for(int i : child[idx]) {
+			if (visited[i]) continue;
+			visited[idx] = true;
+			dfs(i, count+1);
+		}
+		
 	}
 	
 	static void search(int y, int x) {

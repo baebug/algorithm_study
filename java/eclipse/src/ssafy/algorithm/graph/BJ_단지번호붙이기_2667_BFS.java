@@ -1,4 +1,4 @@
-package ssafy;
+package ssafy.algorithm.graph;
 
 import java.io.*;
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
 // (visited & cnt == 0) 조건으로 cnt 있으면 방문은 가능하지만 visited 가 true 이므로 단지수는 추가 안하면? 그래도 고립될 수 있음
 // 간선 데이터를 델타로 준다 --> (1, 2, 3, 4) 상 우 하 좌 순 ( 0은 dummy )
 // 이차원 데이터를 일차원으로 표현? --> 행에 N 만큼 가중치를 준다. (N-queen 에서 쓰던데.. 가로, 세로, 대각선)
-public class Main {
+public class BJ_단지번호붙이기_2667_BFS {
 	
 	static int N, total, tmpCnt;
 	static int[][] input;

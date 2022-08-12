@@ -3,87 +3,109 @@ package ssafy;
 import java.io.*;
 import java.util.*;
 
-// 간선이 두개인 원소가 하나밖에 없으면 이분그래프 아님? --> 응 아님
-// bfs 돌리는데 갔던 곳 또 만나면 아니다? visited = true 만나거나 탐색 다 끝나고 visited = false 가 있으면 "No"
 public class Main {
 	
-	static int T, V, E;		// V: 정점의 수 , E: 간선의 수
-	static boolean[] visited;
-	static int[] colors;
-	static boolean flag;
-	static List<Integer>[] list;
-	static Deque<Integer> dq;
+	static int N = 9;
+	static int[][] input, sv;
+	static int[] rv, cv;
 	static StringBuilder sb = new StringBuilder();
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer stk;
 		
-		T = Integer.parseInt(br.readLine());
+		input = new int[9][9];
+		rv = new int[9];
+		cv = new int[9];
+		sv = new int[3][3];
 		
-		for (int t = 1; t <= T; t++) {
-			StringTokenizer stk = new StringTokenizer(br.readLine());
-			V = Integer.parseInt(stk.nextToken());
-			E = Integer.parseInt(stk.nextToken());
-			
-			dq = new ArrayDeque<>();
-			
-			list = new ArrayList[V+1];
-			for (int i = 0; i < list.length; i++) {
-				list[i] = new ArrayList<>();
+		// 입력
+		for (int i = 0; i < N; i++) {
+			stk = new StringTokenizer(br.readLine());
+			for (int j = 0; j < N; j++) {
+				 input[i][j] = Integer.parseInt(stk.nextToken());
+				 rv[i] |= (1<<input[i][j]);
+				 cv[j] |= (1<<input[i][j]);
+				 sv[i/3][j/3] |= (1<<input[i][j]);
 			}
-			
-			for (int i = 0; i < E; i++) {
-				stk = new StringTokenizer(br.readLine());
-				int a = Integer.parseInt(stk.nextToken());
-				int b = Integer.parseInt(stk.nextToken());
-				
-				list[a].add(b);
-				list[b].add(a);
+		}
+		
+		// 순회하다가 0 을 만나면 --> rv, cv, sv 를 참고해서 칸을 채운다.
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (input[i][j] == 0) dfs(i, j);
 			}
-			
-			flag = bfs(1);
-			for (int i = 1; i <= V; i++) {
-				if (colors[i] == 0) flag = bfs(i);
+		}
+		
+		
+		// 출력
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				sb.append(input[i][j]).append(' ');
 			}
-			
-			if (flag) sb.append("YES").append('\n');
-			else sb.append("NO").append('\n');
+			sb.append('\n');
 		}
 		
 		System.out.print(sb);
+		return;
+		
 	}
 	
-	static boolean bfs(int n) {
-		int cur = -1;
-		dq.clear();
-		colors = new int[V+1];
-		visited = new boolean[V+1];
-		visited[n] = true;
-		colors[n] = 1;
-		dq.addLast(n);
-		
-		while (!dq.isEmpty()) {
-			cur = dq.removeFirst();
-			int color = colors[cur];
-			
-			for(int i : list[cur]) {
-				if (visited[i]) {
-					if (color == colors[i])	return false;
-					else continue;
-				}
-				
-				visited[i] = true;
-				if (color == 1) colors[i] = 2;
-				else colors[i] = 1;
-				
-				dq.addLast(i);
+	static void sudoku(int r, int c) {
+		List<Integer> list = new ArrayList<>();
+		// 들어올 수 있는 숫자 확인?
+		for (int i = 1; i < 10; i++) {
+			if ((rv[r] & 1<<i) == 0 && (cv[c] & 1<<i) == 0 && (sv[r/3][c/3] & 1<<i) == 0) {
+				list.add(i);
 			}
 		}
 		
-		for(int i : list[cur]) {
-			if (colors[cur] == colors[i]) return false;
+		if (list.size() == 1);
+		else if (list.size() > 1);
+		
+//				rv[r] |= 1<<i;
+//				cv[c] |= 1<<i;
+//				sv[r/3][c/3] |= 1<<i;
+//				input[r][c] = i;
+		
+	}
+	
+	static void dfs(int r, int c) {
+		List<Integer> list = new ArrayList<>();
+		
+		for (int i = 1; i < 10; i++) {
+			if ((rv[r] & 1<<i) == 0 && (cv[c] & 1<<i) == 0 && (sv[r/3][c/3] & 1<<i) == 0) {
+				list.add(i);
+			}
 		}
 		
-		return true;
+		// 더 이상 넣을 숫자가 없으면 리턴
+		if (list.size() == 0) return;
+		
+		for (int i : list) {
+			// i 넣고 --> 다른 0 찾아서 dfs 호출? --> 리턴오면 빼고?
+			check(r, c, i);
+			input[r][c] = i;
+			for (int j = 1; j < 10; j++) {
+				 if (input[r][j] == 0) dfs(r, j);
+				 if (input[j][c] == 0) dfs(j, c);
+			}
+			input[r][c] = 0;
+			uncheck(r, c, i);
+		}
+		
 	}
+	
+	static void check(int r, int c, int i) {
+		rv[r] |= 1<<i;
+		cv[c] |= 1<<i;
+		sv[r/3][c/3] |= 1<<i;
+	}
+	
+	static void uncheck(int r, int c, int i) {
+		rv[r] ^= 1<<i;
+		cv[c] ^= 1<<i;
+		sv[r/3][c/3] ^= 1<<i;
+	}
+	
 }

@@ -3,7 +3,7 @@ package ssafy.algorithm.ssw;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BJ_테트로미노_14500 {
 
 	static StringBuilder sb = new StringBuilder();
 	static int N, M, result = Integer.MIN_VALUE;
@@ -66,10 +66,7 @@ public class Main {
 				int ny = y + dt[i][d][0];
 				int nx = x + dt[i][d][1];
 				
-				if (nx<0 || ny<0 || nx>=M || ny>=N) {
-					sum = input[y][x];
-					break;
-				}
+				if (nx<0 || ny<0 || nx>=M || ny>=N) break;
 				
 				sum += input[ny][nx];
 			}

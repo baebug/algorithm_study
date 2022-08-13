@@ -11,10 +11,11 @@ import java.util.*;
 public class BJ_구슬탈출2_13460 {
 
 	static StringBuilder sb = new StringBuilder();
-	static int N, M;
+	static int N, M, result;
 	static int[] R, B, G;
 	static char[][] board;
 	static int[][] dt = new int[][] {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};	// 상 하 좌 우
+	static boolean flag;
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -39,22 +40,39 @@ public class BJ_구슬탈출2_13460 {
 			}
 		}
 		
-		for (int i = 0; i < board.length; i++) {
-			System.out.println(Arrays.toString(board[i]));
-		}
+		solve(0);
 		
-		go(2);
-		
-		for (int i = 0; i < board.length; i++) {
-			System.out.println(Arrays.toString(board[i]));
-		}
+		if (flag) System.out.println(result);
+		else System.out.println(-1);
 		
 	}
 	
-	static void go(int d) {
-		R = move(R, d);
-		B = move(B, d);
-		R = move(R, d);
+	static void solve(int cnt) {
+		if (cnt > 10) return;
+		if (R[0] == G[0] && R[1] == G[1]) {
+			if (B[0] == G[0] && B[1] == G[1]) {
+				return;
+			}
+			flag = true;
+			result = cnt;
+			return;
+		}
+		
+		for (int d = 0; d < 4; d++) {
+			go(d);
+			solve(cnt+1);
+		}
+	}
+	
+	static void go(int d) {	// d 상하좌우
+		// 기본적으로 빨간색을 먼저 보낼건데 파란색이 먼저 움직여야 하는 경우 고려
+		if ((d==0 && B[0] < R[0]) || (d==1 && B[0] > R[0]) || (d==2 && B[1] < R[1]) || (d==3 && B[1] > R[1])) {
+			B = move(B, d);
+			R = move(R, d);
+		} else {
+			R = move(R, d);
+			B = move(B, d);
+		}
 	}
 	
 	// d 방향으로 기울이고 도착 좌표 반환하는 메소드, 구멍에 도착하면 구멍의 좌표를 출력한다.
@@ -81,6 +99,16 @@ public class BJ_구슬탈출2_13460 {
 			cy = ny;
 			cx = nx;
 		}
+	}
+	
+	static char[][] copy() {
+		char[][] tmp = new char[N][M];
+		
+		for (int i = 0; i < N; i++) {
+			tmp[i] = board[i].clone();
+		}
+		
+		return tmp;
 	}
 
 }

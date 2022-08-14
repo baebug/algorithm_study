@@ -1,4 +1,4 @@
-package ssafy;
+package ssafy.algorithm.incomplete;
 
 import java.io.*;
 import java.util.*;

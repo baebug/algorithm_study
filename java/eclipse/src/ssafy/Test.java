@@ -26,6 +26,8 @@ public class Test {
 		
 		System.out.println(child1.get(2));
 		System.out.println(child2[2]);
+		
+		System.out.println((1<<3) - 1);
 	}
 
 }

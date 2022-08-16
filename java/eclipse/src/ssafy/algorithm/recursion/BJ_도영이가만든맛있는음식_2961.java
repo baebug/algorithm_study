@@ -1,4 +1,4 @@
-package ssafy;
+package ssafy.algorithm.recursion;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

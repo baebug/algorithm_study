@@ -1,4 +1,4 @@
-package ssafy;
+package ssafy.algorithm.codeplus.dp;
 
 import java.io.*;
 import java.util.*;

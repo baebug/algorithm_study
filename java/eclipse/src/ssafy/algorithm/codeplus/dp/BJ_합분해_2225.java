@@ -1,11 +1,11 @@
-package ssafy;
+package ssafy.algorithm.codeplus.dp;
 
 import java.io.*;
 import java.util.*;
 
 // 0 부터 N 까지의 정수 K 개를 더해서 합이 N 이 되는 경우의 수
 // 같은 수를 여러 번 사용 가능
-public class Main {
+public class BJ_합분해_2225 {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int N, K, cnt;

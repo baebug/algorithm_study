@@ -1,4 +1,4 @@
-package ssafy.algorithm.incomplete;
+package ssafy.algorithm.greedy;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 // st ed
 public class BJ_회의실배정_1931 {
 
-	static int N, result = 0, total = 1;
+	static int N, result;
 	static Meeting[] list;
 	
 	public static void main(String[] args) throws Exception {
@@ -27,31 +27,17 @@ public class BJ_회의실배정_1931 {
 		
 		Arrays.sort(list);
 		
+		int ed = 0;
+		int result = 0;
 		for (int i = 0; i < N; i++) {
-			meet(i, 0, 1);
+			if (ed <= list[i].st) {
+				result++;
+				ed = list[i].ed;
+			}
 		}
 		
 		System.out.println(result);
-		
 	}
-	
-	static void meet(int start, int last, int cnt) {
-		if (list[N-1].st < list[last].ed) {
-			result = Math.max(result, cnt);
-			return;
-		}
-		
-		Meeting prev = list[last];
-		for (int i = start; i < N; i++) {
-			// 이전 회의의 마치는 시간보다 시작이 빠르면 continue;
-			if (prev.ed > list[i].st) continue;
-			
-			meet(i+1, i, cnt+1);
-		}
-		
-		
-	}
-	
 	
 	static class Meeting implements Comparable<Meeting>{
 		int st;
@@ -65,11 +51,7 @@ public class BJ_회의실배정_1931 {
 		@Override
 		public int compareTo(Meeting o) {
 			// TODO Auto-generated method stub
-			return this.st == o.st ? this.ed - o.ed : this.st - o.st;
+			return this.ed == o.ed ? this.st - o.st : this.ed - o.ed;
 		}
-		
-		
 	}
-	
-	
 }

@@ -3,7 +3,7 @@ package ssafy;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BJ_감시_15683_2 {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int N, M, d, result, ans = Integer.MAX_VALUE;

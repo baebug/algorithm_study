@@ -3,7 +3,7 @@ package ssafy;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BJ_외판원순회_2098_342 {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int N, ans, INF = 919191919;

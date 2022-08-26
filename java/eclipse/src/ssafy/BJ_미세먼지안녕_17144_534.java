@@ -3,7 +3,7 @@ package ssafy;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BJ_미세먼지안녕_17144_534 {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int R, C, T, gc, ans;

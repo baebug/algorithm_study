@@ -3,7 +3,7 @@ package ssafy;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class SW_Shuffle_O_Matic {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int T, N, M, ans;

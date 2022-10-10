@@ -5,7 +5,7 @@ import java.util.*;
 
 // 내 키가 몇 번째인가? --> 나보다 작은 애, 나보다 큰 애 가 몇 명인지 알면 된다.
 // i 와 j 의 관계를 알 수 있으면 Math.min([i][j], [j][j]) 의 값이 INF 가 아니다.
-public class Main {
+public class SW_키순서_5643_fw {
 	
 	static StringBuilder sb = new StringBuilder();
 	static int T, N, M, ans, INF=987654321;

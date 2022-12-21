@@ -1,13 +1,11 @@
-import basic.PG_명예의전당1_2;
-
-import java.util.Arrays;
+import basic.PG_귤고르기;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_명예의전당1_2 pg = new PG_명예의전당1_2();
+        PG_귤고르기 pg = new PG_귤고르기();
 
-        System.out.println(Arrays.toString(pg.solution(3, new int[]{10, 100, 20, 150, 1, 100, 200})));
+        System.out.println(pg.solution(6, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
     }
 
 }

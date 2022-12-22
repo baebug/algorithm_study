@@ -1,11 +1,11 @@
-import basic.PG_귤고르기;
+import basic.PG_기사단원의무기_3;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_귤고르기 pg = new PG_귤고르기();
+        PG_기사단원의무기_3 pg = new PG_기사단원의무기_3();
 
-        System.out.println(pg.solution(6, new int[]{1, 3, 2, 5, 4, 5, 2, 3}));
+        System.out.println(pg.solution(10, 3, 2));
     }
 
 }

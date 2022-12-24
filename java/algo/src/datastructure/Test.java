@@ -8,6 +8,7 @@ public class Test {
         System.out.println("--- test Queue start ---");
         testQueue();
         System.out.println("--- test Queue end ---");
+
     }
 
     static void testStack() {
@@ -58,4 +59,5 @@ public class Test {
         System.out.println("poll data : " + queue.poll());
         System.out.println("isEmpty? : " + queue.isEmpty());
     }
+
 }

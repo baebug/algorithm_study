@@ -1,12 +1,11 @@
-import basic.PG_기사단원의무기_3;
-import basic.PG_크기가작은부분문자열;
+import basic.PG_테이블해시함수;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_크기가작은부분문자열 pg = new PG_크기가작은부분문자열();
+        PG_테이블해시함수 pg = new PG_테이블해시함수();
 
-        System.out.println(pg.solution("50022083987839587912847198273198274198759238754293842394875293871230235987123", "123456789987654321"));
+        System.out.println(pg.solution(new int[][] {{2, 2, 6}, {1, 5, 10}, {4, 2, 9}, {3, 8, 3}}, 2, 2, 3));
     }
 
 }

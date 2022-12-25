@@ -1,4 +1,7 @@
-package datastructure;
+package test;
+
+import datastructure.Queue;
+import datastructure.Stack;
 
 public class Test {
     public static void main(String[] args) {

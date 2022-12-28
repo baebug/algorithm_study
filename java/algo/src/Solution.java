@@ -1,12 +1,11 @@
-import basic.PG_과일장수;
-import basic.PG_테이블해시함수;
+import basic.PG_숫자카드나누기;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_과일장수 pg = new PG_과일장수();
+        PG_숫자카드나누기 pg = new PG_숫자카드나누기();
 
-        System.out.println(pg.solution(3, 4, new int[] {1, 2, 3, 1, 2, 3, 1}));
+        System.out.println(pg.solution(new int[] {16, 12, 4}, new int[] {1, 15, 20}));
     }
 
 }

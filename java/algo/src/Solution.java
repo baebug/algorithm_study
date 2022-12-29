@@ -1,11 +1,11 @@
-import basic.PG_숫자카드나누기;
+import basic.PG_푸드파이트대회_1;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_숫자카드나누기 pg = new PG_숫자카드나누기();
+        PG_푸드파이트대회_1 pg = new PG_푸드파이트대회_1();
 
-        System.out.println(pg.solution(new int[] {16, 12, 4}, new int[] {1, 15, 20}));
+        System.out.println(pg.solution(new int[] {1, 3, 4, 6}));
     }
 
 }

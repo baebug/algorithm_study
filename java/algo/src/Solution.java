@@ -1,14 +1,12 @@
-import basic.PG_우박수열정적분;
-import basic.PG_푸드파이트대회_1;
 
-import java.util.Arrays;
+import basic.PG_마법의엘리베이터_3;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_우박수열정적분 pg = new PG_우박수열정적분();
+        PG_마법의엘리베이터_3 pg = new PG_마법의엘리베이터_3();
 
-        System.out.println(Arrays.toString(pg.solution(5, new int[][] {{0, 0}, {0, -1}, {2, -3}, {3, -3}})));
+        System.out.println(pg.solution(45));
     }
 
 }

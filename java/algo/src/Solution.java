@@ -1,12 +1,12 @@
 
-import basic.PG_마법의엘리베이터_3;
+import basic.PG_유사칸토어비트열;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_마법의엘리베이터_3 pg = new PG_마법의엘리베이터_3();
+        PG_유사칸토어비트열 pg = new PG_유사칸토어비트열();
 
-        System.out.println(pg.solution(45));
+        System.out.println(pg.solution(2, 4, 17));
     }
 
 }

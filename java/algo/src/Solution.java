@@ -1,12 +1,14 @@
 
-import basic.PG_유사칸토어비트열;
+import basic.PG_바탕화면정리;
+
+import java.util.Arrays;
 
 class Solution {
 
     public static void main(String[] args) {
-        PG_유사칸토어비트열 pg = new PG_유사칸토어비트열();
+        PG_바탕화면정리 pg = new PG_바탕화면정리();
 
-        System.out.println(pg.solution(2, 4, 17));
+        System.out.println(Arrays.toString(pg.solution(new String[] {".#...", "..#..", "...#."})));
     }
 
 }

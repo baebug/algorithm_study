@@ -1,6 +1,6 @@
 /**
- Programmers
- Lv.1
+ Programmers Lv.1
+ https://school.programmers.co.kr/learn/courses/30/lessons/161990?language=java#
 
  컴퓨터 바탕화면의 상태를 나타내는 문자열 배열 wallpaper 가 매개변수로 주어질 때
  바탕화면의 파일들을 한 번에 삭제하기 위해 최소한의 이동거리를 갖는

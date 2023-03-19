@@ -1,6 +1,6 @@
 /**
- Programmers
- Lv.2
+ Programmers Lv.2
+ https://school.programmers.co.kr/learn/courses/30/lessons/161989
 
  한 구역에 페인트를 여러 번 칠해도 되고 다시 칠해야 할 구역이 아닌 곳에 페인트를 칠해도 되지만
  다시 칠하기로 정한 구역은 적어도 한 번 페인트칠을 해야 합니다.

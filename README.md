@@ -5,6 +5,8 @@
 ### Lv.1
 
 - [바탕화면정리](java/algo/src/basic/PG_바탕화면정리.java) 230304
+- [공원 산책](java/algo/src/basic/PG_공원_산책.java) 230327
+- [나머지가 1이 되는 수 찾기](java/algo/src/basic/PG_나머지가_1이_되는_수_찾기.java) 230327
 
 ### Lv.2
 
